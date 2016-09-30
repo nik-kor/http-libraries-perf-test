@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/nik-kor/axios-superagent-perf-test#readme",
   "dependencies": {
+    "axios": "^0.14.0",
     "benchmark": "^2.1.1",
     "nock": "^8.0.0"
   }
