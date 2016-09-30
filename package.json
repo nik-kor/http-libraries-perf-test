@@ -1,0 +1,29 @@
+{
+  "name": "axios-superagent-perf-test",
+  "version": "0.0.1",
+  "description": "Compare axios and superagent performance",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nik-kor/axios-superagent-perf-test.git"
+  },
+  "keywords": [
+    "axios",
+    "superagent",
+    "performance"
+  ],
+  "author": "Nikita Korotkih",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nik-kor/axios-superagent-perf-test/issues"
+  },
+  "homepage": "https://github.com/nik-kor/axios-superagent-perf-test#readme",
+  "dependencies": {
+    "benchmark": "^2.1.1",
+    "nock": "^8.0.0"
+  }
+}
