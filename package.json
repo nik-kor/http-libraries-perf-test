@@ -1,7 +1,7 @@
 {
-  "name": "axios-superagent-perf-test",
+  "name": "http-libraries-perf-test",
   "version": "0.0.1",
-  "description": "Compare axios and superagent performance",
+  "description": "Compare node.js http libraries performance",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nik-kor/axios-superagent-perf-test.git"
+    "url": "git+https://github.com/nik-kor/http-libraries-perf-test.git"
   },
   "keywords": [
     "axios",
@@ -19,12 +19,14 @@
   "author": "Nikita Korotkih",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/nik-kor/axios-superagent-perf-test/issues"
+    "url": "https://github.com/nik-kor/http-libraries-perf-test/issues"
   },
-  "homepage": "https://github.com/nik-kor/axios-superagent-perf-test#readme",
+  "homepage": "https://github.com/nik-kor/http-libraries-perf-test#readme",
   "dependencies": {
     "axios": "^0.14.0",
     "benchmark": "^2.1.1",
-    "nock": "^8.0.0"
+    "nock": "^8.0.0",
+    "request": "^2.75.0",
+    "superagent": "^2.3.0"
   }
 }
