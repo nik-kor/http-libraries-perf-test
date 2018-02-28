@@ -2,9 +2,13 @@ var http = require('http');
 var axios = require('axios');
 var superagent = require('superagent');
 var request = require('request');
+var got = require('got');
+var requestify = require('requestify');
+var fetch = require('node-fetch');
 
 var nock = require('nock');
 var HOST = 'test-perf';
+var URL = `http://${HOST}/test`;
 
 axios.defaults.baseURL = `http://${HOST}`;
 
@@ -36,6 +40,48 @@ suite.add('http.request GET request', {
     }
 });
 
+suite.add('fetch GET request', {
+  defer: true,
+  fn: (defer) => {
+    fetch(URL).then(() => defer.resolve())
+  }
+});
+
+suite.add('fetch POST request', {
+  defer: true,
+  fn: (defer) => {
+    fetch(URL, {method: 'POST'}).then(() => defer.resolve());
+  }
+});
+
+suite.add('requestify GET request', {
+  defer: true,
+  fn: (defer) => {
+    requestify.get(URL).then(() => defer.resolve());
+  }
+});
+
+suite.add('requestify POST request', {
+  defer: true,
+  fn: (defer) => {
+    requestify.post(URL).then(() => defer.resolve());
+  }
+});
+
+suite.add('got GET request', {
+  defer: true,
+  fn: (defer) => {
+    got.get(URL).then(()=> defer.resolve());
+  }
+});
+
+suite.add('got POST request', {
+  defer: true,
+  fn: (defer) => {
+    got.post(URL).then(() => defer.resolve());
+  }
+});
+
 suite.add('axios GET request', {
     defer: true,
     fn: (defer) => {
@@ -53,28 +99,28 @@ suite.add('axios POST request', {
 suite.add('superagent GET request', {
     defer: true,
     fn: (defer) => {
-        superagent.get(`http://${HOST}/test`).end(() => { defer.resolve(); });
+        superagent.get(URL).end(() => { defer.resolve(); });
     }
 });
 
 suite.add('superagent POST request', {
     defer: true,
     fn: (defer) => {
-        superagent.post(`http://${HOST}/test`).send().end(() => defer.resolve());
+        superagent.post(URL).send().end(() => defer.resolve());
     }
 });
 
 suite.add('Request GET request', {
     defer: true,
     fn: (defer) => {
-        request(`http://${HOST}/test`, () => defer.resolve());
+        request(URL, () => defer.resolve());
     }
 });
 
 suite.add('Request POST request', {
     defer: true,
     fn: (defer) => {
-        request.post({ url: `http://${HOST}/test` }, () => defer.resolve());
+        request.post({ url: URL }, () => defer.resolve());
     }
 });
 
