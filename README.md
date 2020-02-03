@@ -2,16 +2,16 @@
 
 My results:
 ```bash
-➜  http-libraries-perf-test git:(master) ✗ node index.js
-http.request POST request x 10,968 ops/sec ±1.99% (73 runs sampled)
-http.request GET request x 11,110 ops/sec ±1.37% (75 runs sampled)
-axios GET request x 3,416 ops/sec ±2.05% (73 runs sampled)
-axios POST request x 3,387 ops/sec ±2.50% (71 runs sampled)
-superagent GET request x 6,498 ops/sec ±2.22% (70 runs sampled)
-superagent POST request x 6,418 ops/sec ±2.80% (71 runs sampled)
-Request GET request x 3,251 ops/sec ±2.85% (71 runs sampled)
-Request POST request x 2,664 ops/sec ±2.87% (67 runs sampled)
-Fastest is http.request GET request,http.request POST request
+✗ node index.js
+➜  http.request POST request x 13,748 ops/sec ±17.81% (67 runs sampled)
+    http.request GET request x 21,206 ops/sec ±7.60% (76 runs sampled)
+    axios GET request x 5,817 ops/sec ±7.73% (76 runs sampled)
+    axios POST request x 6,466 ops/sec ±2.04% (79 runs sampled)
+    superagent GET request x 11,205 ops/sec ±6.95% (78 runs sampled)
+    superagent POST request x 12,145 ops/sec ±2.43% (77 runs sampled)
+    Request GET request x 8,348 ops/sec ±5.35% (80 runs sampled)
+    Request POST request x 7,754 ops/sec ±2.84% (79 runs sampled)
+    Fastest is http.request GET request,http.request POST request
 ```
 
 I'm not suprised that bare `http.request` is the fastest. But I can't explain why `axios` and `request` are so slow.
