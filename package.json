@@ -23,10 +23,10 @@
   },
   "homepage": "https://github.com/nik-kor/http-libraries-perf-test#readme",
   "dependencies": {
-    "axios": "^0.14.0",
-    "benchmark": "^2.1.1",
-    "nock": "^8.0.0",
-    "request": "^2.75.0",
-    "superagent": "^2.3.0"
+    "axios": "^0.19.2",
+    "benchmark": "^2.1.4",
+    "nock": "^11.7.2",
+    "request": "^2.88.0",
+    "superagent": "^5.2.1"
   }
 }
